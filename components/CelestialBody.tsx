@@ -1,15 +1,6 @@
 import { SpotLight, Text3D } from "@react-three/drei";
-import { useFrame } from "@react-three/fiber";
 import { useMemo, useRef } from "react";
-import {
-  ConeGeometry,
-  Mesh,
-  Object3D,
-  OctahedronGeometry,
-  SphereGeometry,
-  TorusKnotGeometry,
-  Vector3,
-} from "three";
+import { Mesh, Object3D, SphereGeometry, Vector3 } from "three";
 
 export default function CelestialBody({
   position,
@@ -25,7 +16,7 @@ export default function CelestialBody({
   text: string;
 }) {
   const spotlightTarget = useMemo(() => new Object3D(), []);
-  const meshRef = useRef<Mesh>();
+  const meshRef = useRef<Mesh>(null);
   //let geometry = null;
   const geometry = new SphereGeometry(1, 32, 32);
 

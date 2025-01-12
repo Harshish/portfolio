@@ -2,9 +2,10 @@ import { PointMaterial, Points } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { inSphere } from "maath/random";
 import { useRef, useState } from "react";
+import { Points as POINTS } from "three";
 
-export default function Stars(props: any) {
-  const ref = useRef();
+export default function Stars(props: React.PropsWithChildren<unknown>) {
+  const ref = useRef<POINTS>(null);
   const [sphere] = useState(() =>
     inSphere(new Float32Array(3000), { radius: 50 }),
   );
@@ -19,7 +20,7 @@ export default function Stars(props: any) {
     <group rotation={[0, 0, Math.PI / 4]}>
       <Points
         ref={ref}
-        positions={sphere}
+        positions={sphere as Float32Array}
         stride={3}
         frustumCulled={false}
         {...props}

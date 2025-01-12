@@ -17,6 +17,7 @@ export default function Scene() {
       <directionalLight intensity={1} position={[10, 10, -10]} castShadow />
       <ambientLight intensity={0.8} />
       <Effects disableGamma>
+        {/*// @ts-expect-error unrealBloomPass is not detected*/}
         <unrealBloomPass threshold={1} strength={0.6} radius={0.5} />
       </Effects>
       <CelestialBodies />

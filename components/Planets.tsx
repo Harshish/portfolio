@@ -10,16 +10,16 @@ Title: Planet Collection
 import { useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
-import { Object3D } from "three";
+import { Group } from "three";
 
-export default function Planets(props) {
+export default function Planets(props: React.PropsWithChildren<unknown>) {
   const { nodes, materials } = useGLTF("/models/planet_collection.glb");
 
-  const icePlanet = useRef<Object3D>();
-  const lavaPlanet = useRef<Object3D>();
-  const rockPlanet = useRef<Object3D>();
-  const ringPlanet = useRef<Object3D>();
-  const greenPlanet = useRef<Object3D>();
+  const icePlanet = useRef<Group>(null);
+  const lavaPlanet = useRef<Group>(null);
+  const rockPlanet = useRef<Group>(null);
+  const ringPlanet = useRef<Group>(null);
+  const greenPlanet = useRef<Group>(null);
 
   useFrame((_, delta) => {
     if (!icePlanet.current) return;
@@ -45,19 +45,31 @@ export default function Planets(props) {
             ref={icePlanet}
           >
             <mesh
-              geometry={nodes.Planet02_Ice_0.geometry}
+              geometry={
+                // @ts-expect-error gltfjsx doesn't type this correctly
+                nodes.Planet02_Ice_0.geometry
+              }
               material={materials.material}
             />
             <mesh
-              geometry={nodes.Planet02_Snow002_0.geometry}
+              geometry={
+                // @ts-expect-error gltfjsx doesn't type this correctly
+                nodes.Planet02_Snow002_0.geometry
+              }
               material={materials["Snow.002"]}
             />
             <mesh
-              geometry={nodes.Planet02_Material004_0.geometry}
+              geometry={
+                // @ts-expect-error gltfjsx doesn't type this correctly
+                nodes.Planet02_Material004_0.geometry
+              }
               material={materials["Material.004"]}
             />
             <mesh
-              geometry={nodes.Planet02_Treasure001_0.geometry}
+              geometry={
+                // @ts-expect-error gltfjsx doesn't type this correctly
+                nodes.Planet02_Treasure001_0.geometry
+              }
               material={materials["Treasure.001"]}
             />
           </group>
@@ -68,19 +80,31 @@ export default function Planets(props) {
             ref={lavaPlanet}
           >
             <mesh
-              geometry={nodes.P1_Water003_Lava001_0.geometry}
+              geometry={
+                // @ts-expect-error gltfjsx doesn't type this correctly
+                nodes.P1_Water003_Lava001_0.geometry
+              }
               material={materials["Lava.001"]}
             />
             <mesh
-              geometry={nodes.P1_Water003_Lava_0.geometry}
+              geometry={
+                // @ts-expect-error gltfjsx doesn't type this correctly
+                nodes.P1_Water003_Lava_0.geometry
+              }
               material={materials.Lava}
             />
             <mesh
-              geometry={nodes.P1_Water003_Ground003_0.geometry}
+              geometry={
+                // @ts-expect-error gltfjsx doesn't type this correctly
+                nodes.P1_Water003_Ground003_0.geometry
+              }
               material={materials["Ground.003"]}
             />
             <mesh
-              geometry={nodes.P1_Water003_Rocks003_0.geometry}
+              geometry={
+                // @ts-expect-error gltfjsx doesn't type this correctly
+                nodes.P1_Water003_Rocks003_0.geometry
+              }
               material={materials["Rocks.003"]}
             />
           </group>
@@ -91,35 +115,59 @@ export default function Planets(props) {
             ref={rockPlanet}
           >
             <mesh
-              geometry={nodes.P1_Water001_Water002_0.geometry}
+              geometry={
+                // @ts-expect-error gltfjsx doesn't type this correctly
+                nodes.P1_Water001_Water002_0.geometry
+              }
               material={materials["Water.002"]}
             />
             <mesh
-              geometry={nodes.P1_Water001_Clouds001_0.geometry}
+              geometry={
+                // @ts-expect-error gltfjsx doesn't type this correctly
+                nodes.P1_Water001_Clouds001_0.geometry
+              }
               material={materials["Clouds.001"]}
             />
             <mesh
-              geometry={nodes.P1_Water001_HUD_G003_0.geometry}
+              geometry={
+                // @ts-expect-error gltfjsx doesn't type this correctly
+                nodes.P1_Water001_HUD_G003_0.geometry
+              }
               material={materials["HUD_G.003"]}
             />
             <mesh
-              geometry={nodes.P1_Water001_Lava002_0.geometry}
+              geometry={
+                // @ts-expect-error gltfjsx doesn't type this correctly
+                nodes.P1_Water001_Lava002_0.geometry
+              }
               material={materials["Lava.002"]}
             />
             <mesh
-              geometry={nodes.P1_Water001_HUD_Y002_0.geometry}
+              geometry={
+                // @ts-expect-error gltfjsx doesn't type this correctly
+                nodes.P1_Water001_HUD_Y002_0.geometry
+              }
               material={materials["HUD_Y.002"]}
             />
             <mesh
-              geometry={nodes.P1_Water001_HUD_R002_0.geometry}
+              geometry={
+                // @ts-expect-error gltfjsx doesn't type this correctly
+                nodes.P1_Water001_HUD_R002_0.geometry
+              }
               material={materials["HUD_R.002"]}
             />
             <mesh
-              geometry={nodes.P1_Water001_Material008_0.geometry}
+              geometry={
+                // @ts-expect-error gltfjsx doesn't type this correctly
+                nodes.P1_Water001_Material008_0.geometry
+              }
               material={materials["Material.008"]}
             />
             <mesh
-              geometry={nodes.P1_Water001_HUD_B002_0.geometry}
+              geometry={
+                // @ts-expect-error gltfjsx doesn't type this correctly
+                nodes.P1_Water001_HUD_B002_0.geometry
+              }
               material={materials["HUD_B.002"]}
             />
           </group>
@@ -130,27 +178,45 @@ export default function Planets(props) {
             ref={ringPlanet}
           >
             <mesh
-              geometry={nodes.Icosphere021_Treewood002_0.geometry}
+              geometry={
+                // @ts-expect-error gltfjsx doesn't type this correctly
+                nodes.Icosphere021_Treewood002_0.geometry
+              }
               material={materials["Tree.wood.002"]}
             />
             <mesh
-              geometry={nodes.Icosphere021_Clouds002_0.geometry}
+              geometry={
+                // @ts-expect-error gltfjsx doesn't type this correctly
+                nodes.Icosphere021_Clouds002_0.geometry
+              }
               material={materials["Clouds.002"]}
             />
             <mesh
-              geometry={nodes.Icosphere021_Ground001_0.geometry}
+              geometry={
+                // @ts-expect-error gltfjsx doesn't type this correctly
+                nodes.Icosphere021_Ground001_0.geometry
+              }
               material={materials["Ground.001"]}
             />
             <mesh
-              geometry={nodes.Icosphere021_Sand001_0.geometry}
+              geometry={
+                // @ts-expect-error gltfjsx doesn't type this correctly
+                nodes.Icosphere021_Sand001_0.geometry
+              }
               material={materials["Sand.001"]}
             />
             <mesh
-              geometry={nodes.Icosphere021_Material005_0.geometry}
+              geometry={
+                // @ts-expect-error gltfjsx doesn't type this correctly
+                nodes.Icosphere021_Material005_0.geometry
+              }
               material={materials["Material.005"]}
             />
             <mesh
-              geometry={nodes.Icosphere021_Rock002_0.geometry}
+              geometry={
+                // @ts-expect-error gltfjsx doesn't type this correctly
+                nodes.Icosphere021_Rock002_0.geometry
+              }
               material={materials["Rock.002"]}
             />
           </group>
@@ -161,15 +227,24 @@ export default function Planets(props) {
             ref={greenPlanet}
           >
             <mesh
-              geometry={nodes.Icosphere020_Sand002_0.geometry}
+              geometry={
+                // @ts-expect-error gltfjsx doesn't type this correctly
+                nodes.Icosphere020_Sand002_0.geometry
+              }
               material={materials["Sand.002"]}
             />
             <mesh
-              geometry={nodes.Icosphere020_Rocks001_0.geometry}
+              geometry={
+                // @ts-expect-error gltfjsx doesn't type this correctly
+                nodes.Icosphere020_Rocks001_0.geometry
+              }
               material={materials["Rocks.001"]}
             />
             <mesh
-              geometry={nodes.Icosphere020_Ground002_0.geometry}
+              geometry={
+                // @ts-expect-error gltfjsx doesn't type this correctly
+                nodes.Icosphere020_Ground002_0.geometry
+              }
               material={materials["Ground.002"]}
             />
           </group>

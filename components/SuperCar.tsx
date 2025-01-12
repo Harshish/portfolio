@@ -10,7 +10,8 @@ import { Vector3 } from "three";
 export default function SuperCar() {
   const { scene } = useGLTF("models/spacecar.glb");
   const keyMap = useKeyboard();
-  const { car: ref } = useObjectControls();
+  const ctx = useObjectControls();
+  const ref = ctx?.car || null;
   const { camera } = useThree();
 
   useEffect(() => {
@@ -23,7 +24,7 @@ export default function SuperCar() {
   }, [scene]);
 
   useFrame((_, delta) => {
-    if (!ref.current) return;
+    if (!ref || !ref.current) return;
 
     const speed = 10; // Movement speed
     const rotationSpeed = Math.PI / 2; // Rotation speed
