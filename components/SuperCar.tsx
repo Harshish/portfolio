@@ -8,7 +8,7 @@ import { useEffect } from "react";
 import { Vector3 } from "three";
 
 export default function SuperCar() {
-  const { scene } = useGLTF("portfolio/models/spacecar.glb");
+  const { scene } = useGLTF("models/spacecar.glb");
   const keyMap = useKeyboard();
   const ctx = useObjectControls();
   const ref = ctx?.car || null;
@@ -99,4 +99,4 @@ export default function SuperCar() {
   );
 }
 
-useGLTF.preload("portfolio/models/spacecar.glb");
+useGLTF.preload("models/spacecar.glb");
