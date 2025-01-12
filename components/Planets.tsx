@@ -13,7 +13,9 @@ import { useRef } from "react";
 import { Group } from "three";
 
 export default function Planets(props: React.PropsWithChildren<unknown>) {
-  const { nodes, materials } = useGLTF("/models/planet_collection.glb");
+  const { nodes, materials } = useGLTF(
+    "portfolio/models/planet_collection.glb",
+  );
 
   const icePlanet = useRef<Group>(null);
   const lavaPlanet = useRef<Group>(null);
@@ -254,4 +256,4 @@ export default function Planets(props: React.PropsWithChildren<unknown>) {
   );
 }
 
-useGLTF.preload("/models/planet_collection.glb");
+useGLTF.preload("portfolio/models/planet_collection.glb");

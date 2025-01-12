@@ -70,7 +70,7 @@ export default function CelestialBody({
         position={[position.x, 7, position.z]}
       />
       <Text3D
-        font="fonts/ki-medium.json"
+        font="portfolio/fonts/ki-medium.json"
         bevelEnabled
         bevelSize={0.05}
         bevelThickness={0.05}
