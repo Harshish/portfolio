@@ -1,5 +1,4 @@
 "use client";
-import { PublicApi } from "@react-three/cannon";
 import { createContext, RefObject, useContext, useRef, useState } from "react";
 import { Object3D } from "three";
 
