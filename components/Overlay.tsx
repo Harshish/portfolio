@@ -10,7 +10,7 @@ export default function Overlay() {
     <div className="absolute top-0 left-0 w-full h-full">
       <Image
         className="absolute bottom-0 left-28 translate-x-[-50%] translate-y-[-50%]"
-        src="/Controls.png"
+        src="Controls.png"
         alt="logo"
         width="150"
         height="150"
@@ -23,6 +23,14 @@ export default function Overlay() {
             setCarMovement((prev) => ({ ...prev, forward: true }));
         }}
         onMouseUp={() => {
+          if (setCarMovement)
+            setCarMovement((prev) => ({ ...prev, forward: false }));
+        }}
+        onTouchStart={() => {
+          if (setCarMovement)
+            setCarMovement((prev) => ({ ...prev, forward: true }));
+        }}
+        onTouchEnd={() => {
           if (setCarMovement)
             setCarMovement((prev) => ({ ...prev, forward: false }));
         }}
@@ -40,6 +48,14 @@ export default function Overlay() {
           if (setCarMovement)
             setCarMovement((prev) => ({ ...prev, backward: false }));
         }}
+        onTouchStart={() => {
+          if (setCarMovement)
+            setCarMovement((prev) => ({ ...prev, backward: true }));
+        }}
+        onTouchEnd={() => {
+          if (setCarMovement)
+            setCarMovement((prev) => ({ ...prev, backward: false }));
+        }}
       >
         S
       </button>
@@ -51,6 +67,14 @@ export default function Overlay() {
             setCarMovement((prev) => ({ ...prev, left: true }));
         }}
         onMouseUp={() => {
+          if (setCarMovement)
+            setCarMovement((prev) => ({ ...prev, left: false }));
+        }}
+        onTouchStart={() => {
+          if (setCarMovement)
+            setCarMovement((prev) => ({ ...prev, left: true }));
+        }}
+        onTouchEnd={() => {
           if (setCarMovement)
             setCarMovement((prev) => ({ ...prev, left: false }));
         }}
@@ -68,9 +92,20 @@ export default function Overlay() {
           if (setCarMovement)
             setCarMovement((prev) => ({ ...prev, right: false }));
         }}
+        onTouchStart={() => {
+          if (setCarMovement)
+            setCarMovement((prev) => ({ ...prev, right: true }));
+        }}
+        onTouchEnd={() => {
+          if (setCarMovement)
+            setCarMovement((prev) => ({ ...prev, right: false }));
+        }}
       >
         D
       </button>
+      <p className="absolute bottom-8 left-36 -translate-x-1/2 text-xs">
+        Move around and explore using these keys
+      </p>
     </div>
   );
 }

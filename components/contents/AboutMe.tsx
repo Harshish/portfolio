@@ -7,7 +7,7 @@ export default function AboutMe() {
       <div className="card-body">
         <p className="align-center">💫 About Me:</p>
         <br />
-        <p>
+        <p className="align-center text-white">
           I&apos;m a tinkerer and curious tech enthusiast who happens to be a
           Software Engineer.I have a wide range of experience from working in
           networking switch software to developing a full stack web application.

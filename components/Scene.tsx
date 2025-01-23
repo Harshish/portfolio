@@ -8,6 +8,7 @@ import { UnrealBloomPass } from "three/examples/jsm/Addons.js";
 import { CelestialBodies } from "./CelestialBodies";
 import Planets from "./Planets";
 import Banner from "./Banner";
+import Name from "./Name";
 
 extend({ UnrealBloomPass });
 
@@ -31,6 +32,10 @@ export default function Scene() {
         backgroundBlurriness={0.35}
         backgroundIntensity={0.5}
       />
+
+      <Float floatIntensity={1} speed={5} rotationIntensity={1}>
+        <Name />
+      </Float>
       <Planets />
       <Banner />
 

@@ -94,7 +94,7 @@ export default function SuperCar() {
       ref={ref}
       scale={1}
       rotation={[0, Math.PI, 0]}
-      position={[0, 0, 0]}
+      position={[0, 0, 7]}
     />
   );
 }
