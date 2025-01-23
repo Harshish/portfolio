@@ -31,14 +31,14 @@ export default function SuperCar() {
     const worldBounds = 25;
 
     // Forward and backward movement (KeyW and KeyS)
-    if (keyMap["KeyW"]) {
+    if (keyMap["KeyW"] || ctx?.carMovement.forward) {
       ref.current.position.x +=
         Math.sin(ref.current.rotation.y) * delta * speed;
       ref.current.position.z +=
         Math.cos(ref.current.rotation.y) * delta * speed;
       ref.current.rotation.x = lerp(ref.current.rotation.x, Math.PI / 18, 0.1);
     }
-    if (keyMap["KeyS"]) {
+    if (keyMap["KeyS"] || ctx?.carMovement.backward) {
       ref.current.position.x -=
         Math.sin(ref.current.rotation.y) * delta * speed;
       ref.current.position.z -=
@@ -47,11 +47,11 @@ export default function SuperCar() {
     }
 
     // Left and right rotation (KeyA and KeyD)
-    if (keyMap["KeyA"]) {
+    if (keyMap["KeyA"] || ctx?.carMovement.left) {
       ref.current.rotation.y += rotationSpeed * delta; // Rotate left
       ref.current.rotation.z = lerp(ref.current.rotation.z, -Math.PI / 12, 0.1);
     }
-    if (keyMap["KeyD"]) {
+    if (keyMap["KeyD"] || ctx?.carMovement.right) {
       ref.current.rotation.y -= rotationSpeed * delta; // Rotate right
       ref.current.rotation.z = lerp(ref.current.rotation.z, Math.PI / 18, 0.1);
     }
