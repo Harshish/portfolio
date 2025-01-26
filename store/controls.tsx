@@ -13,6 +13,8 @@ type ControlsContextType = {
   car: RefObject<Object3D>;
   carMovement: Movement;
   setCarMovement: React.Dispatch<React.SetStateAction<Movement>>;
+  nearContent: number | null;
+  setNearContent: React.Dispatch<React.SetStateAction<number | null>>;
 };
 
 const ControlsContext = createContext<ControlsContextType | null>(null);
@@ -29,11 +31,14 @@ export function ControlsContextProvider({
     left: false,
     right: false,
   } as Movement);
+  const [nearContent, setNearContent] = useState<number | null>(null);
 
   const storeValues = {
     car: carRef,
     carMovement: carMovement,
     setCarMovement: setCarMovement,
+    nearContent: nearContent,
+    setNearContent: setNearContent,
   };
 
   return (

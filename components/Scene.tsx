@@ -7,8 +7,8 @@ import Stars from "./Stars";
 import { UnrealBloomPass } from "three/examples/jsm/Addons.js";
 import { CelestialBodies } from "./CelestialBodies";
 import Planets from "./Planets";
-import Banner from "./Banner";
 import Name from "./Name";
+import PositionTracker from "./PositionTracker";
 
 extend({ UnrealBloomPass });
 
@@ -26,8 +26,9 @@ export default function Scene() {
       <Float floatIntensity={0.5} speed={2} rotationIntensity={0.5}>
         <SuperCar />
       </Float>
+      <PositionTracker />
       <Environment
-        preset="night"
+        files="envmap/dikhololo_night_1k.hdr"
         background
         backgroundBlurriness={0.35}
         backgroundIntensity={0.5}
@@ -37,7 +38,6 @@ export default function Scene() {
         <Name />
       </Float>
       <Planets />
-      <Banner />
 
       {/*<Perf position="top-left" />*/}
     </Canvas>

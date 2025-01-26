@@ -1,3 +1,4 @@
+"use client";
 import Loading from "@/components/Loading";
 import Overlay from "@/components/Overlay";
 import Scene from "@/components/Scene";
