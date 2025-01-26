@@ -18,16 +18,15 @@ export const metadata: Metadata = {
   title: "Harsis Yadav - Full-Stack Developer",
   description:
     "Welcome to my portfolio. I am a web developer specializing in front-end and back-end development.",
-  // openGraph: {
-  //   title: "Harsis Yadav - Full-Stack Developer",
-  //   description:
-  //     "Welcome to my portfolio. I am a web developer specializing in front-end and back-end development.",
-  //   url: "https://yourportfolio.com",
-  //   //image: "https://yourportfolio.com/images/portfolio_image.jpg",
-  //   type: "website",
-  //   locale: "en_US",
-  //   siteName: "My Portfolio",
-  // },
+  openGraph: {
+    title: "Harsis Yadav - Full-Stack Developer",
+    description:
+      "Welcome to my portfolio. I am a web developer specializing in front-end and back-end development.",
+    url: "https://harshish.github.io/portfolio/",
+    images: "https://harshish.github.io/portfolio/images/dp.jpg",
+    locale: "en_US",
+    siteName: "Harsis Yadav Dev Portfolio",
+  },
 };
 
 export default function RootLayout({
@@ -46,15 +45,28 @@ export default function RootLayout({
         />
         <meta name="author" content="Your Name" />
 
-        {/* Open Graph Meta Tags 
-        <meta property="og:title" content={metadata.openGraph.title} />
-        <meta property="og:description" content={metadata.openGraph.description} />
-        <meta property="og:image" content={metadata.openGraph.image} />
-        <meta property="og:url" content={metadata.openGraph.url} />
-        <meta property="og:type" content={metadata.openGraph.type} />
-        <meta property="og:locale" content={metadata.openGraph.locale} />
-        <meta property="og:site_name" content={metadata.openGraph.siteName} />
-        */}
+        {/* Open Graph Meta Tags */}
+        <meta
+          property="og:title"
+          content={metadata?.openGraph?.title as string}
+        />
+        <meta
+          property="og:description"
+          content={metadata?.openGraph?.description as string}
+        />
+        <meta
+          property="og:image"
+          content={metadata?.openGraph?.images as string}
+        />
+        <meta property="og:url" content={metadata?.openGraph?.url as string} />
+        <meta property="og:locale" content={metadata?.openGraph?.locale} />
+        <meta property="og:site_name" content={metadata?.openGraph?.siteName} />
+
+        <script
+          data-goatcounter="https://harshish-portfolio.goatcounter.com/count"
+          async
+          src="//gc.zgo.at/count.js"
+        ></script>
       </Head>
 
       <body

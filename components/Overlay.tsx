@@ -9,7 +9,8 @@ import StyledWrapper from "./contents/StyledWrapper";
 
 export default function Overlay() {
   const ctx = useObjectControls();
-  const content = !ctx || ctx.nearContent === null ? -1 : ctx.nearContent;
+  if (!ctx) return <></>;
+  const content = ctx.nearContent === null ? -1 : ctx.nearContent;
   return (
     <div className="absolute top-0 left-0 w-full h-full">
       <ControlsView />
