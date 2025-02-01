@@ -9,7 +9,7 @@ export default function ButtonControls() {
     <>
       <button
         type="button"
-        className="absolute bottom-[7.4rem] left-[6.1rem] bg-white px-[0.38rem] py-[0.14rem] hover:bg-gray-300 text-black rounded active:bg-gray-500"
+        className="absolute bottom-[7.4rem] left-[6.1rem] bg-white px-[0.40rem] py-[0.16rem] hover:bg-gray-300 text-black rounded active:bg-gray-500"
         onMouseDown={() => {
           if (setCarMovement)
             setCarMovement((prev) => ({ ...prev, forward: true }));
@@ -31,7 +31,7 @@ export default function ButtonControls() {
       </button>
       <button
         type="button"
-        className="absolute bottom-[5.21rem] left-[6.13rem] bg-white px-2 py-[0.14rem] hover:bg-gray-300 text-black rounded active:bg-gray-500"
+        className="absolute bottom-[5.21rem] left-[6.13rem] bg-white px-[0.52rem] py-[0.16rem] hover:bg-gray-300 text-black rounded active:bg-gray-500"
         onMouseDown={() => {
           if (setCarMovement)
             setCarMovement((prev) => ({ ...prev, backward: true }));
@@ -53,7 +53,7 @@ export default function ButtonControls() {
       </button>
       <button
         type="button"
-        className="absolute bottom-[5.21rem] left-[3.95rem] bg-white px-[0.52rem] py-[0.14rem] hover:bg-gray-300 text-black rounded active:bg-gray-500"
+        className="absolute bottom-[5.21rem] left-[3.95rem] bg-white px-[0.52rem] py-[0.16rem] hover:bg-gray-300 text-black rounded active:bg-gray-500"
         onMouseDown={() => {
           if (setCarMovement)
             setCarMovement((prev) => ({ ...prev, left: true }));
@@ -75,7 +75,7 @@ export default function ButtonControls() {
       </button>
       <button
         type="button"
-        className="absolute bottom-[5.21rem] left-[8.24rem] bg-white px-2 py-[0.14rem] hover:bg-gray-300 text-black rounded active:bg-gray-500"
+        className="absolute bottom-[5.21rem] left-[8.24rem] bg-white px-[0.52rem] py-[0.16rem] hover:bg-gray-300 text-black rounded active:bg-gray-500"
         onMouseDown={() => {
           if (setCarMovement)
             setCarMovement((prev) => ({ ...prev, right: true }));

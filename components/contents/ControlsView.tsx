@@ -4,7 +4,7 @@ import ButtonControls from "../ButtonControls";
 
 export default function ControlsView() {
   return (
-    <div className="absolute top-0 left-0 w-full h-full z-10">
+    <div className="absolute top-0 left-0 w-full h-full">
       <Image
         className="absolute bottom-0 left-28 translate-x-[-50%] translate-y-[-50%]"
         src="images/Controls.png"
